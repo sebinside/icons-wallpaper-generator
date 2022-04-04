@@ -158,6 +158,43 @@
             ctx.fillText(String.fromCharCode(parseInt(iconUnicode, 16), parseInt(iconUnicode, 16)), x, y);
         }
 
+        function drawIconNegative(iconUnicode, colorFront, colorBack, fontSize, x, y) {
+            const canvas = document.getElementById("main");
+            const ctx = canvas.getContext('2d');
+
+            ctx.textBaseline = 'middle';
+            ctx.textAlign = "center";
+            ctx.font = `900 ${fontSize}px "Font Awesome 6 Pro"`;
+
+            const textMetrics = ctx.measureText(String.fromCodePoint(parseInt(iconUnicode, 16)));
+            const realFontSize = Math.min(fontSize, fontSize * ((fontSize + 5) / textMetrics.width));
+            ctx.font = `900 ${realFontSize}px "Font Awesome 6 Pro"`;
+
+            drawHexagon(ctx, colorFront, x, y);
+
+            ctx.fillStyle = colorBack;
+            ctx.fillText(String.fromCodePoint(parseInt(iconUnicode, 16)), x, y);
+        }
+
+        function drawCircle(ctx, color, x, y) {
+            ctx.beginPath();
+            ctx.arc(x, y, 20, 0, 2 * Math.PI, false);
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
+
+        function drawHexagon(ctx, color, x, y) {
+            const a = 2 * Math.PI / 6;
+            const r = 20;
+            ctx.beginPath();
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(x + r * Math.cos(a * i), y + r * Math.sin(a * i));
+            }
+            ctx.closePath();
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
+
         function fillBackground() {
             const canvas = document.getElementById("main");
             const ctx = canvas.getContext('2d');
@@ -171,35 +208,41 @@
             console.log(randomIndex);
             console.log(randomCode);
 
-            drawDuotoneIcon(randomCode, colorA, colorB, fontSize, x, y);
+            let randomColor = 'hsl(' + 360 * Math.random() + ',60%,60%)';
+            
+            if (Math.random() < 0.82) {
+                randomColor = "#444";
+            }
+            
+            drawIconNegative(randomCode, randomColor, "#222", fontSize, x, y);
+            //drawDuotoneIcon(randomCode, colorA, colorB, fontSize, x, y);
         }
 
         function createImage() {
             fillBackground();
 
             const fontSize = 20;
-            const distanceX = 60;
-            const distanceY = 90;
+            const distanceX = 60 * 1.05;
+            const distanceY = 90 * 1.05;
 
             const canvas = document.getElementById("main");
 
             let secondRow = true;
 
-            for (let x = distanceX; x < canvas.width; x+= distanceX) {
+            for (let x = distanceX; x < canvas.width; x += distanceX) {
                 let y = secondRow ? distanceY : distanceY * 1.5;
-                for(; y < canvas.height; y+= distanceY) {
+                for (; y < canvas.height; y += distanceY) {
                     drawRandomDuotoneIcon("#EEE", "#BBB", fontSize, x, y);
                 }
                 secondRow = !secondRow;
-            } 
+            }
         }
 
         // TODO: Find cool layout, e.g. https://stackoverflow.com/questions/17125632/html5-canvas-rotate-object-without-moving-coordinates
-            // - Thin oder Duotone? (Pro Duotone, Potenzial. Außerdem ist thin mega MKBHD-style)
-            // - Mehr vertikaler als horizontaler Abstand?
-            // - Random opacity?
-            // - Leicht gedreht vs. exakt 45 grad?
-            // - Gesamtes Bild leicht drehen (sieht gut aus!)
+        // - Mehr vertikaler als horizontaler Abstand?
+        // - Random opacity?
+        // - Leicht gedreht vs. exakt 45 grad?
+        // - Gesamtes Bild leicht drehen (sieht gut aus!)
         // TODO: Fix icons (e.g. speakers, mic, lock)
         // TODO: Fix icon repetitions (shuffle array after 50 items + icon repetition detection?)
         // TODO: Update coloring
