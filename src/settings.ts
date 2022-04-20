@@ -2,10 +2,18 @@ export const iconCodes = ["f0ca", "e15b", "f00e", "f233", "f2f7", "f1de", "e448"
 
 export interface WallpaperSettings {
     preset: "hexagon" | "circle" | "duotone",
-    backgroundColor: string
+    backgroundColor: string,
+    fontSize: number,
+    distanceX: number,
+    distanceY: number,
+    secondRowFactor: number
 }
 
 export const defaultSettings: WallpaperSettings = {
     preset: "hexagon",
-    backgroundColor: "#222222"
+    backgroundColor: "#222222",
+    fontSize: 20,
+    distanceX: 60 * 1.05,
+    distanceY: 90 * 1.05,
+    secondRowFactor: 1.5
 }

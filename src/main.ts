@@ -41,10 +41,6 @@ function drawIconNegative(iconUnicode, colorFront, colorBack, fontSize, x, y) {
   ctx.fillText(String.fromCodePoint(parseInt(iconUnicode, 16)), x, y);
 }
 
-
-
-
-
 function drawRandomDuotoneIcon(colorA, colorB, fontSize, x, y) {
   const randomIndex = Math.floor(Math.random() * iconCodes.length);
   const randomCode = iconCodes[randomIndex];
@@ -56,30 +52,8 @@ function drawRandomDuotoneIcon(colorA, colorB, fontSize, x, y) {
   if (Math.random() < 0.82) {
     randomColor = "#444";
   }
-
-  drawIconNegative(randomCode, randomColor, "#222", fontSize, x, y);
-  //drawDuotoneIcon(randomCode, colorA, colorB, fontSize, x, y);
 }
 
-function createImage() {
-
-  // TODO: Move to settings
-  const fontSize = 20;
-  const distanceX = 60 * 1.05;
-  const distanceY = 90 * 1.05;
-
-  
-  // TODO: move to wallpaper
-  let secondRow = true;
-
-  for (let x = distanceX; x < canvas.width; x += distanceX) {
-    let y = secondRow ? distanceY : distanceY * 1.5;
-    for (; y < canvas.height; y += distanceY) {
-      drawRandomDuotoneIcon("#EEE", "#BBB", fontSize, x, y);
-    }
-    secondRow = !secondRow;
-  }
-}
 
 
 
