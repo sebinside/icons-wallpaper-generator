@@ -10,7 +10,7 @@ export interface WallpaperSettings {
 }
 
 export const defaultSettings: WallpaperSettings = {
-    preset: "hexagon",
+    preset: "circle",
     backgroundColor: "#222222",
     fontSize: 20,
     distanceX: 60 * 1.05,
