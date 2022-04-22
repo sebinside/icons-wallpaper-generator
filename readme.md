@@ -1,4 +1,4 @@
-# skate702 Wallpaper Generator
+# Icons Wallpaper Generator
 
 ## TODOs
 * Add eslint
