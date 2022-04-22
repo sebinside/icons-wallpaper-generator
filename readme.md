@@ -8,6 +8,8 @@
     * Random opacity?
     * Leicht gedreht vs. exakt 45 grad?
     * Gesamtes Bild leicht drehen (sieht gut aus!)
-* Fix icon repetitions (shuffle array after 50 items + icon repetition detection?)
+* Fix icon repetitions (shuffle array after 50 items + icon repetition detection? sliding window über 2x zeilen?)
 * Update coloring
 * Custom coloring per unicode
+* Jede Spalte um x pixel weiter unten beginnen lassen?
+* Animationen: Bewegen, drehen, einzelne icons wechseln

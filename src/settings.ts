@@ -9,7 +9,7 @@ export interface WallpaperSettings {
     secondRowFactor: number
 }
 
-export const defaultSettings: WallpaperSettings = {
+const normalSettings: WallpaperSettings = {
     preset: "circle",
     backgroundColor: "#222222",
     fontSize: 20,
@@ -17,3 +17,15 @@ export const defaultSettings: WallpaperSettings = {
     distanceY: 90 * 1.05,
     secondRowFactor: 1.5
 }
+
+const narrowSettings: WallpaperSettings = {
+    preset: "circle",
+    backgroundColor: "#222222",
+    fontSize: 20,
+    distanceX: 30 * 1.05,
+    distanceY: 90 * 1.05,
+    secondRowFactor: 1.5
+}
+
+const settings = [normalSettings, narrowSettings];
+export const defaultSettings = settings[1];
