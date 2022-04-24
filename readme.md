@@ -13,3 +13,4 @@
 * Custom coloring per unicode
 * Jede Spalte um x pixel weiter unten beginnen lassen?
 * Animationen: Bewegen, drehen, einzelne icons wechseln
+* Color Paletten (z.B. Monokai)
