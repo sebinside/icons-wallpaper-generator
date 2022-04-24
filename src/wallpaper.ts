@@ -50,10 +50,10 @@ export default class Wallpaper {
 
             if (settings.preset === "circle") {
                 // TODO: Move to settings
-                return new CircleIcon(randomCode, randomColor, "#222", settings.fontSize, x, y)
+                return new CircleIcon(randomCode, randomColor, "#222", settings.fontSize, settings.fontAwesomePlan, x, y)
             } else {
                 // TODO: Move to settings
-                return new HexagonIcon(randomCode, randomColor, "#222", settings.fontSize, x, y)
+                return new HexagonIcon(randomCode, randomColor, "#222", settings.fontSize, settings.fontAwesomePlan, x, y)
             }
         } else {
             return new DuotoneIcon(randomCode, "#EEE", "#BBB", settings.fontSize, x, y);

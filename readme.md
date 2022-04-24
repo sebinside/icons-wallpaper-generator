@@ -1,5 +1,13 @@
 # Icons Wallpaper Generator
 
+## How to use
+* Clone this repository
+* Install dependencies with `npm i`
+* Add the `css` and `webfonts` folders from the [Font Awesome For Web zip file](https://fontawesome.com/download) to the root folder
+* Depending on your plan and the zip file you downloaded you might have to change `fontAwesomePlan` `settings.ts` to the correct option (`Free` or `Pro`)
+* *Optional:* Change the icons to use in `settings.ts`. Some of the default icons are not included in Font Awesome Free
+
+
 ## TODOs
 * Add eslint
 * Fix icons (e.g. speakers, mic, lock)

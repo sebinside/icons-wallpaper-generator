@@ -3,7 +3,7 @@ import Utils from "./utils"
 export abstract class Icon {
     abstract drawIcon(ctx: CanvasRenderingContext2D): void;
 
-    protected setupFont(ctx: CanvasRenderingContext2D, iconUnicode: string, fontSize: number, font: "Pro" | "Duotone") {
+    protected setupFont(ctx: CanvasRenderingContext2D, iconUnicode: string, fontSize: number, font: "Free" |"Pro" | "Duotone") {
         ctx.textBaseline = 'middle';
         ctx.textAlign = "center";
 
@@ -48,12 +48,13 @@ abstract class FilledIcon extends Icon {
         protected readonly foregroundColor: string,
         protected readonly backgroundColor: string,
         protected readonly fontSize: number,
+        protected readonly fontAwesomePlan: "Free" | "Pro",
         protected readonly x: number,
         protected readonly y: number) { super(); }
 
     drawIcon(ctx: CanvasRenderingContext2D): void {
         this.fillIconBackground(ctx);
-        this.setupFont(ctx, this.iconUnicode, this.fontSize, "Pro");
+        this.setupFont(ctx, this.iconUnicode, this.fontSize, this.fontAwesomePlan);
 
         ctx.fillStyle = this.backgroundColor;
         ctx.fillText(this.calculateIcon(this.iconUnicode), this.x, this.y);
