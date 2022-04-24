@@ -1,5 +1,12 @@
 # Icons Wallpaper Generator
 
+## How to use
+* Clone this repository
+* Install dependencies with `npm i`
+* Add the `css` and `webfonts` folders from the [Font Awesome Pro For Web zip file](https://fontawesome.com/download) to the root folder
+* *Optional:* Change the icons to use in `settings.ts`
+
+
 ## TODOs
 * Add eslint
 * Fix icons (e.g. speakers, mic, lock)
