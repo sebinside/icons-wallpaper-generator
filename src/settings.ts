@@ -6,7 +6,8 @@ export interface WallpaperSettings {
     fontSize: number,
     distanceX: number,
     distanceY: number,
-    secondRowFactor: number
+    secondRowFactor: number,
+    fontAwesomePlan: "Free" | "Pro"
 }
 
 const normalSettings: WallpaperSettings = {
@@ -15,7 +16,8 @@ const normalSettings: WallpaperSettings = {
     fontSize: 20,
     distanceX: 60 * 1.05,
     distanceY: 90 * 1.05,
-    secondRowFactor: 1.5
+    secondRowFactor: 1.5,
+    fontAwesomePlan: "Pro"
 }
 
 const narrowSettings: WallpaperSettings = {
@@ -24,7 +26,8 @@ const narrowSettings: WallpaperSettings = {
     fontSize: 20,
     distanceX: 30 * 1.05,
     distanceY: 90 * 1.05,
-    secondRowFactor: 1.5
+    secondRowFactor: 1.5,
+    fontAwesomePlan: "Pro"
 }
 
 const settings = [normalSettings, narrowSettings];
